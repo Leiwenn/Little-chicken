@@ -1,0 +1,88 @@
+
+@-webkit-keyframes rebond{
+  0%
+  {
+    margin-top: 0;
+  }
+  50%
+  {
+    margin-top: 10px;
+  }
+  100%
+  {
+    margin-top: 0;
+  }
+}
+@keyframes rebond{
+  0%
+  {
+    margin-top: 0;
+  }
+  50%
+  {
+    margin-top: 20px;
+  }
+  100%
+  {
+    margin-top: 0;
+  }
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+  color: #2D241E;
+  font-weight: bold;
+  background-color: #4682B4;
+}
+
+.main{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cercle{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #FF8C00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 5px 10px black;
+  -webkit-animation-name: rebond;
+  animation-name: rebond;
+}
+.cercle::before{
+  content: "";
+  position: absolute;
+  top: -10px;
+  width: 30px;
+  height: 5px;
+  border: 5px dotted #2D241E;
+  transform: rotate(90deg);
+}
+
+.cercle::after{
+  content: "";
+  position: absolute;
+  left: 20px;
+  bottom: -5px;
+  width: 0;
+  height: 0;
+  border-bottom: 30px solid #AD4F09;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  transform: rotate(180deg);
+}
+
+.cercle:hover{
+  -webkit-animation: rebond 2s ease infinite;
+  animation: rebond 1s ease infinite;
+}
+
